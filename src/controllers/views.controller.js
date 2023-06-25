@@ -47,8 +47,7 @@ export async function changePassword(req, res) {
 
 export async function nodemailerPassword(req, res) {
   try {
-    const token = req.query.token;
-    res.render("nodemailerPassword",{ token , titulo: "nodemailerPassword" });
+    res.render("nodemailerPassword",{  titulo: "nodemailerPassword" });
   } catch (error) {
     res.status(500).json({ error });
   }

@@ -212,7 +212,7 @@ passport.use(
     async (jwtPayLoad, done) => {
       const userDBDTO = new UserDBDTO(jwtPayLoad.user)
       const  usersRespDTO = new UsersRespDTO(userDBDTO)
-      logger.info("---jwtPayLoad", usersRespDTO);s
+      logger.info("---jwtPayLoad", usersRespDTO);
       done(null, usersRespDTO);
     }
   )
