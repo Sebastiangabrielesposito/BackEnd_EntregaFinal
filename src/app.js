@@ -118,7 +118,7 @@ app.use(passport.session());
 app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/messages", messagesRouter);
-app.use("/realtimeproducts", realTimeProducts);
+app.use("/realTimeProducts", realTimeProducts);
 app.use("/campos", camposRouter);
 app.use("/users", usersRouter);
 app.use("/views", viewsRouter);

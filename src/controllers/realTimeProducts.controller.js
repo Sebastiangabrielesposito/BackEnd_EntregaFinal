@@ -13,7 +13,7 @@ import { productModel } from "../persistencia/DAOs/mongoDB/models/products.model
 export async function ProdAll(req, res) {
     try{
         const prod = await getProductsAll()
-        res.render("realtimeproducts", { prod, titulo: "realTimeProducts" });
+        res.render("realTimeProducts", { prod, titulo: "realTimeProducts" });
     }catch(error){
         res.status(500).json({error})
     }

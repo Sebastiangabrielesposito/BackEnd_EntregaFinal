@@ -90,14 +90,14 @@ export async function carShop(req, res) {
  
     
     if (user && user.cart) {
-      res.render("carshop", {
+      res.render("carShop", {
         titulo: "carShop",
         username: user.first_name,
         cartId,
         products: products,
       });
     } else {
-      res.render("carshop", {
+      res.render("carShop", {
         titulo: "carShop",
         username: user.first_name,
         cartId,
