@@ -25,7 +25,8 @@ export async function nodemailerPassword(req,res){
     }
     try{
         await transporter.sendMail(messageOptions)
-        res.redirect('/views/nodemailerPassword?token=' + token);
+        // res.redirect('/views/nodemailerPassword?token=' + token);
+        res.redirect('/views/nodemailerPassword?token=' + encodeURIComponent(token));
     }catch(error){
         logger.error("error");
     }
