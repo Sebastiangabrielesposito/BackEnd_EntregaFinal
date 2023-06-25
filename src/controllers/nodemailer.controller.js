@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken"
 import logger from '../utils/winston/winston.js';
 
 export async function nodemailerPassword(req,res){
+    console.log(req.url);
     const {email} = req.body
     logger.info(`Generando token para ${email}...`);
     const token = jwt.sign({ email }, config.token_nodemailer, { expiresIn: '1h' });
