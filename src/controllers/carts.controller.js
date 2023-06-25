@@ -188,7 +188,7 @@ export async function productsInCar(req, res) {
         await user.save()
         await car.save();
         // res.status(200).json({ message: "Product added successfully" });
-        res.redirect("/views/carShop")
+        res.redirect("/views/carshop")
     } else {
       res.status(400).json({ message: "There is not product with that id" });
     }
