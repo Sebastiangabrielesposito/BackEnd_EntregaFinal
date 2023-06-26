@@ -85,7 +85,12 @@ export async function carShop(req, res) {
     const user = await usersModel.findById(userId).populate("cart");
   
     const cartId = user.cart[0]._id;
-    const products = user.cart[0].products;
+    const products = user.cart[0].products.map((product) => {
+      return{
+        producto: product.producto._id.toString(),
+        quantity: product.quantity
+      }
+    } )
     console.log(products);
  
     
