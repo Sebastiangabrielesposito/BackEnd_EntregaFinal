@@ -1,0 +1,30 @@
+{
+  message: 'Conectado a la base de datos',
+  level: 'info',
+  timestamp: '2023-06-26T01:43:24.597Z'
+}
+{
+  message: 'Escuchando al puerto 8080',
+  level: 'info',
+  timestamp: '2023-06-26T01:43:24.655Z'
+}
+{
+  message: 'Conectado a la base de datos',
+  level: 'info',
+  timestamp: '2023-06-26T01:45:28.992Z'
+}
+{
+  message: 'Escuchando al puerto 8080',
+  level: 'info',
+  timestamp: '2023-06-26T01:45:29.040Z'
+}
+{
+  message: 'Conectado a la base de datos',
+  level: 'info',
+  timestamp: '2023-06-26T01:46:19.662Z'
+}
+{
+  message: 'Escuchando al puerto 8080',
+  level: 'info',
+  timestamp: '2023-06-26T01:46:19.722Z'
+}

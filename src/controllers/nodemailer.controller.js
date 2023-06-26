@@ -12,10 +12,10 @@ export async function nodemailerPassword(req,res){
     const token = jwt.sign({ email }, config.token_nodemailer, { expiresIn: '1h' });
     logger.info(`Token generado: ${token}`);
 
-    const isLocalhost = config.node_env === 'development' || !config.node_env
+    const isLocalhost = config.NODE_ENV === 'development' || config.NODE_ENV === 'production'
     const baseUrl = isLocalhost ? 'http://localhost:8080' : 'https://backendentregafinal-production-fa79.up.railway.app';
     const resetPasswordUrl = `${baseUrl}/views/changePassword?token=${token}`;
-
+    console.log(config.NODE_ENV);
 {/* <p><a href="http://localhost:8080/views/changePassword?token=${token}">Restablecer contraseña</a></p>  */}
     const messageOptions = {
         from:'Universal Market',

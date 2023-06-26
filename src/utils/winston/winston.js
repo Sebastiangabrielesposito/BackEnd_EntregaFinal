@@ -23,7 +23,7 @@ const logsLevels ={
 }
 let logger
 
-if(config.node_env === "development"){
+if(config.NODE_ENV === "development"){
     logger = winston.createLogger({
         levels: logsLevels.names,
         transports:[

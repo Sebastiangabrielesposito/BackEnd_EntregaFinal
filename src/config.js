@@ -11,7 +11,7 @@ const obj = {
     ADMIN_USER: process.env.ADMIN_USER,
     ADMIN_CODER_USER: process.env.ADMIN_CODER_USER,
     PERSISTENCIA:process.env.PERSISTENCIA,
-    node_env : process.env.NODE_ENV,
+    NODE_ENV : process.env.NODE_ENV,
     gmail_user:process.env.GMAIL_USER,
     gmail_password: process.env.GMAIL_PASSWORD,
     token_nodemailer: process.env.TOKENNODEMAILER,
