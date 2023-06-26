@@ -50,12 +50,13 @@ const router = Router();
 // login sin passport mongo
 // router.post("/login", dbLoginSinPassport);
 
-//mongo passport-registro
+//mongo 
 
 router.get("/allUsers", isAdmin,allUsers)
 
 router.delete("/deleteInactive",isAdmin,deleteUsersConexionTwoDays)
 
+//passport-registro
 router.post(
   "/registro",
   passport.authenticate("registro", {

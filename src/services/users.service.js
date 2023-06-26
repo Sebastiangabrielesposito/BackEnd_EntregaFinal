@@ -4,36 +4,6 @@ import logger from '../utils/winston/winston.js';
 import CustomError from '../utils/errors/CustomError.js';
 import {UserErrorNames, UserErrorMessages, UserErrorCauses} from '../utils/errors/errors.enum.js';
 // import UserDBDTO from '../persistencia/DTOs/userDB.dto.js';
-//fileStore
-
-const users = [];
-// console.log(users);
-
-export async function userExists(u){
-    try{
-        const user = await usersModel.some((u) => u.email === req.body.email);
-        return user
-    }catch(error){
-        CustomError.createCustomError({
-            name:UserErrorNames.GET_USER_ERROR,
-            message:UserErrorMessages.GET_USER_ERROR,
-            cause:UserErrorCauses.GET_USER_ERROR
-          });
-    }
-}
-
-export async function searchUser(u){
-    try{
-        const user = await usersModel.find((u) => (u.email = email));
-        return user
-    }catch(error){
-        CustomError.createCustomError({
-            name:UserErrorNames.GET_USER_ERROR,
-            message:UserErrorMessages.GET_USER_ERROR,
-            cause:UserErrorCauses.GET_USER_ERROR
-          });
-    }
-}
 
 //mongo
 

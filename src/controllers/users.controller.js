@@ -1,7 +1,5 @@
 import { json } from "express";
 import {
-  userExists,
-  searchUser,
   findOneUser,
   // createUser,
   findUser,
@@ -24,9 +22,12 @@ import { transporter } from "../messages/nodemailer.js";
 
 //Filestore
 
+// const users = [];
+// console.log(users);
+
 export async function fileRegistro(req, res) {
   try {
-    const existeUsuario = await userExists();
+    const existeUsuario = users.some((u) => u.email === req.body.email);
     if (existeUsuario) {
       res.redirect("/views/errorRegistro");
     } else {
@@ -42,7 +43,7 @@ export async function fileLogin(req, res) {
   try {
     console.log(users);
     const { email, password } = req.body;
-    const usuario = await searchUser();
+    const usuario = users.find((u) => (u.email = email));
     if (usuario && usuario.password === password) {
       for (const key in req.body) {
        
