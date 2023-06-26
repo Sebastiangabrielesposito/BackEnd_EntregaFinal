@@ -13,7 +13,7 @@ import { productById,getProductsAll } from "../services/product.service.js";
 import { usersModel } from "../persistencia/DAOs/mongoDB/models/users.model.js";
 import CustomError from '../utils/errors/CustomError.js';
 import {CartErrorNames, CartErrorMessages, CartErrorCauses} from '../utils/errors/errors.enum.js';
-
+import { productModel } from "../persistencia/DAOs/mongoDB/models/products.model.js";
 
 export async function CartAll(req, res) {
   try {
@@ -154,10 +154,11 @@ export async function productsInCar(req, res) {
       const userId = req.user._id;
       const user = await usersModel.findById(userId);
       if (user.role === 'premium') {
-        const productOwner = await usersModel.findOne({
-          cart: carId,
-          'products.producto': prod._id
+        const productOwner = await productModel.findOne({
+          _id: prod._id,
+          owner: user._id
         });
+        
         if (productOwner) {
           return res.status(401).json({ message: 'Premium users cannot add their own products to the cart' });
         }

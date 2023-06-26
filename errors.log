@@ -28,3 +28,13 @@
   level: 'info',
   timestamp: '2023-06-26T01:46:19.722Z'
 }
+{
+  message: 'Conectado a la base de datos',
+  level: 'info',
+  timestamp: '2023-06-26T03:12:45.663Z'
+}
+{
+  message: 'Escuchando al puerto 8080',
+  level: 'info',
+  timestamp: '2023-06-26T03:12:45.728Z'
+}

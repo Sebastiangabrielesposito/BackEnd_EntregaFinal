@@ -11,18 +11,14 @@ export async function nodemailerPassword(req,res){
     logger.info(`Generando token para ${email}...`);
     const token = jwt.sign({ email }, config.token_nodemailer, { expiresIn: '1h' });
     logger.info(`Token generado: ${token}`);
-
-
-    // const isLocalhost = config.NODE_ENV === 'development' 
-    // const baseUrl = isLocalhost ? 'http://localhost:8080' : 'https://backendentregafinal-production-fa79.up.railway.app';
     
-    const baseUrl = config.NODE_ENV === 'development'
-    ? 'http://localhost:8080'
-    : 'https://backendentregafinal-production-fa79.up.railway.app';
+    const isDevelompent = config.NODE_ENV === 'development'
+    const baseUrl = isDevelopment ? 'http://localhost:8080' : 'https://backendentregafinal-production-fa79.up.railway.app';
     const resetPasswordUrl = `${baseUrl}/views/changePassword?token=${token}`;
     console.log(config.NODE_ENV);
 {/* <p><a href="http://localhost:8080/views/changePassword?token=${token}">Restablecer contraseña</a></p>  */}
-    const messageOptions = {
+    
+const messageOptions = {
         from:'Universal Market',
         to:email,
         subject:`Reestablecer contraseña`,

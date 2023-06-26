@@ -32,6 +32,11 @@ export async function fileRegistro(req, res) {
       res.redirect("/views/errorRegistro");
     } else {
       users.push(req.body);
+      // const nuevoUsuario = {
+      //   ...req.body,
+      //   role: "user"
+      // };
+      users.push(nuevoUsuario);
       res.redirect("/views/login");
     }
   } catch (error) {
